@@ -16,14 +16,17 @@ function addPlayer() {
         Gender.value = ""
         return
     }
-    console.log("Adding player: " + Name.value + ". With gender: " + Gender.value)
     players[Name.value] = Gender.value
-    for (let p in players) {
-        console.log(p + " " + players[p])
-    }
     Name.value = ""
     Gender.value = ""
 
+}
+
+function removePlayer(p: string) {
+    console.log("Removing player: " + p)
+    delete players[p]
+    Name.value = "TEMP" // This is a hack to force a re-render
+    Name.value = ""
 }
 
 </script>
@@ -41,7 +44,10 @@ function addPlayer() {
     <button @click=addPlayer()>Add player</button>
     
     <div v-for="(p, pp) in players">
-        <player>{{pp}}, {{p}}</player>
+        <player>{{pp}}, {{p}} <button @click="removePlayer(String(pp))">Remove</button></player>
+    </div>
+    <div v-if="Object.keys(players).length >= 5">
+        <button>Start game</button>
     </div>
 
 </template>
