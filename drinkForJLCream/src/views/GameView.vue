@@ -1,32 +1,38 @@
 <script setup lang="ts">
-
-    import Gamecard from '../components/GameCard.vue'
-
     import Game from "../game.ts"
+ 
+    import cards from '../components/cards.vue'
 
     let g = new Game()
-    const item = this.$router.params.item
-    
-    for (let i in item) {
-        g.addPlayer(i, item[i])
+
+    const params = window.location.search
+        .slice(1)
+        .split("&")
+        .map((p) => p.split("="))
+        .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
+
+    for (let i in params) {
+        g.addPlayer(i, params[i])
     }
 
-    console.log(g.getPlayers())
+    console.log("players: " + g.getPlayers())
+    console.log("males: " + g.getMales())
+    console.log("females: " + g.getFemales())
+    console.log("nonbinaries: " + g.getNonBinaries())
+
+
 </script>
 
 
-
-
 <template>
-    <p>Starta spelet</p>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
-    <Gamecard title="Game 1" description="Björn dricker 8 klunkar"/>
+
+    <cards></cards>
+
 </template>
+
+<style scoped>
+  #body {
+    background-color: #000000 !important;
+    margin-top: 100px;
+  }
+</style>
