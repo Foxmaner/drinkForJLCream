@@ -55,7 +55,7 @@ function removePlayer(p: string) {
     </div>
         <RouterLink :to="{path: '/game', query: players}"
         v-if="Object.keys(players).length >= 5"
-        class="button">Start game</RouterLink>
+        class="button">Start Game</RouterLink>
 </template>
 
 <style scoped>

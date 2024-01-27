@@ -29,6 +29,7 @@ class Game {
     addPlayer(Name: string, Gender: string): void{
         let p = new Player(Name, 0, Gender)
         this.players[Name] = p
+        console.log(Gender)
         this.genders[Gender].push(Name)
     }
 

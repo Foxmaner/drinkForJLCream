@@ -1,6 +1,7 @@
 <script lang="ts">
     import Game from "../game.ts"
     let g = new Game()
+    console.log(window.location.search + "aaaaa")
     const params = window.location.search
         .slice(1)
         .split('&')
@@ -16,30 +17,30 @@
     console.log("females: " + g.getFemales())
     console.log("nonbinaries: " + g.getNonBinaries())
 
-        // Import Swiper Vue.js components
-        import { Swiper, SwiperSlide } from 'swiper/vue';
+    // Import Swiper Vue.js components
+    import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
+    // Import Swiper styles
+    import 'swiper/css';
 
-import 'swiper/css/effect-cards';
+    import 'swiper/css/effect-cards';
 
-import './style.css';
+    import './style.css';
 
-// import required modules
-import { EffectCards } from 'swiper/modules';
+    // import required modules
+    import { EffectCards } from 'swiper/modules';
 
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [EffectCards],
-        };
-    },
-};
+    export default {
+        components: {
+            Swiper,
+            SwiperSlide,
+        },
+        setup() {
+            return {
+                modules: [EffectCards],
+            };
+        },
+    };
 </script>
 
 
