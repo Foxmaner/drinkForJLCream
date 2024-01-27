@@ -33,15 +33,16 @@ function removePlayer(p: string) {
 </script>
 
 <template>
-    <input v-model.trim="Name" placeholder="Name">
-    <select v-model="Gender">
-        <option disabled value="">Gender</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Non binary</option>
-    </select>
-
-    <button @click=addPlayer()>Add player</button>
+    <div class="input-bar">
+        <input v-model.trim="Name" placeholder="Name" class="name">
+        <select v-model="Gender" class="select">
+            <option disabled value="">Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non binary</option>
+        </select>
+        <button @click=addPlayer() class="add-player">Add player</button>
+    </div>
     <div v-if="Object.keys(players).length == 0">
         <p>Add at least five players to start a game</p>
     </div>
@@ -58,6 +59,40 @@ function removePlayer(p: string) {
 </template>
 
 <style scoped>
+/* Styles for .input-bar container */
+.input-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for input elements */
+.name, .select {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    margin-right: 10px;
+}
+
+/* Style for the button inside .input-bar */
+.add-player {
+    background-color: #587B7F;
+    border: 1px solid #587B7F;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.add-player:hover {
+    background-color: #476267;
+    border-color: #476267;
+}
 
 .button {
     background-color: #587B7F; /* Adjusted background color */
