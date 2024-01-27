@@ -52,8 +52,27 @@ function removePlayer(p: string) {
             <button @click=removePlayer(String(pp))>Remove</button>
         </player>
     </div>
-    <RouterLink :to="{path: '/game', query: players}"
-    v-if="Object.keys(players).length >= 5"
-    >Start game</RouterLink>
-    
+        <RouterLink :to="{path: '/game', query: players}"
+        v-if="Object.keys(players).length >= 5"
+        class="button">Start game</RouterLink>
 </template>
+
+<style scoped>
+
+.button {
+    background-color: #587B7F; /* Adjusted background color */
+    border: 1px solid #587B7F; /* Matching border color */
+    color: #FFFFFF; /* White text color */
+    padding: 8px 16px; /* Adjust padding for better appearance */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.button:hover {
+    background-color: #476267; /* Darker background color on hover */
+    border-color: #476267; /* Darker border color on hover */
+}
+
+</style>
