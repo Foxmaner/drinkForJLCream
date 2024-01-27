@@ -11,10 +11,11 @@ body {
   background-color: var(--color-primary);
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+header  { 
+  padding-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: normal;
 }
 
@@ -29,15 +30,3 @@ a,
 /*@media (hover: hover) {
 }
 */
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
