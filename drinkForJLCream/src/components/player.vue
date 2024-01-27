@@ -23,7 +23,7 @@
 <style scoped>
 .player-card {
     margin-top: 1rem;
-    width: 250px;
+    width: 100%;
     background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
