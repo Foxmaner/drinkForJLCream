@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "vue-swing": "^0.0.10",
+    "vue-swipy": "^0.1.1"
+  }
+}
