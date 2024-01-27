@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import player from '../components/player.vue'
+import VueRouter from 'vue-router';
 
 import { ref } from 'vue'
 
 const Name = ref()
 const Gender = ref()
 
-let players:{[key:string]:string} = {}
+let players:{[key:string]:string} = {"Gibbis":"Male", "Max":"Non binary", "Axel":"Male", "Eskil":"Female", "Björn":"Non binary"}
 
 function addPlayer() {
     
@@ -23,7 +24,6 @@ function addPlayer() {
 }
 
 function removePlayer(p: string) {
-    console.log("Removing player: " + p)
     delete players[p]
     Name.value = "TEMP" // This is a hack to force a re-render
     Name.value = ""
@@ -47,13 +47,14 @@ function removePlayer(p: string) {
     </div>
     <div v-for="(p, pp) in players">
         <player>
-            <template #name>{{pp}}, </template> 
+            <template #name>{{pp}}</template>
             <template #gender>{{p}}</template>
             <button @click="removePlayer(String(pp))">Remove</button>
         </player>
     </div>
     <div v-if="Object.keys(players).length >= 5">
         <button>Start game</button>
+        <router-link :to="`/game/${players}`">test</router-link>
     </div>
 
 </template>
