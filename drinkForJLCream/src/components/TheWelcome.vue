@@ -26,7 +26,7 @@ function addPlayer() {
 
 function removePlayer(p: string) {
     delete players[p]
-    Name.value = "TEMP" // This is a hack to force a re-render
+    Name.value = "TEMP" // This is a hack to force a re-render of the list
     Name.value = ""
 }
 
@@ -57,7 +57,7 @@ function removePlayer(p: string) {
         v-if="Object.keys(players).length >= 5"
         class="button">Start game</RouterLink>
 </template>
-
+ 
 <style scoped>
 /* Styles for .input-bar container */
 .input-bar {
