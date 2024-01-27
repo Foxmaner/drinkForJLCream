@@ -21,7 +21,8 @@
 
 <style scoped>
 .item {
-    margin-top: 2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     display: flex;
     flex-direction: row;
     align-items: center;
