@@ -7,9 +7,9 @@ class Player {
     nrDrinks: number
     name: string
 
-    public constructor(Name:string, nrDrinks: number, Gender: string) {
+    public constructor(Name:string, nr: number, Gender: string) {
         this.gender = Gender
-        this.nrDrinks = nrDrinks
+        this.nrDrinks = nr
         this.name = Name
     }
 }
@@ -22,18 +22,14 @@ class Game {
 
     public constructor() {
         this.players = {}
-        this.genders = {}
+        this.genders = {"Male": [], "Female": [], "Non+binary": []}
         this.rules = rules["rules"]
     }
 
     addPlayer(Name: string, Gender: string): void{
         let p = new Player(Name, 0, Gender)
         this.players[Name] = p
-        if (!this.genders[Gender]){
-            this.genders[Gender] = [Name]
-        } else {
-            this.genders[Gender].push(Name)
-        }
+        this.genders[Gender].push(p.name)
     }
 
 
@@ -50,7 +46,7 @@ class Game {
     getMales(): string[]{
         let ret: string[] = []
         for (let item in this.genders["Male"]) {
-            ret.push(item)
+            ret.push(this.genders["Male"][item])
         }
         return ret
     }
@@ -58,17 +54,17 @@ class Game {
 
     getFemales(): string[]{
         let ret: string[] = []
-        for (let item in this.genders["Females"]) {
-            ret.push(item)
+        for (let item in this.genders["Female"]) {
+            ret.push(this.genders["Female"][item])
         }
         return ret
     }
 
 
-    getNonBinary(): string[]{
+    getNonBinaries(): string[]{
         let ret: string[] = []
         for (let item in this.genders["Non+binary"]) {
-            ret.push(item)
+            ret.push(this.genders["Non+binary"][item])
         }
         return ret
     }
