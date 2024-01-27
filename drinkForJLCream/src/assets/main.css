@@ -1,5 +1,16 @@
 @import './base.css';
 
+:root {
+  --color-primary: #A8C3C7;
+  --color-secondary: #D5FFF3;
+  --color-triary: #AF9AB2;
+  --color-quaternary: #5D4954;
+  --color-quinary: #68534D;
+}
+body {
+  background-color: var(--color-primary);
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -15,12 +26,9 @@ a,
   padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/*@media (hover: hover) {
 }
-
+*/
 @media (min-width: 1024px) {
   body {
     display: flex;
