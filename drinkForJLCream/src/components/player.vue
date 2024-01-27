@@ -2,8 +2,8 @@
 </script>
 
 <template>
-    <div class="item">
-        <p>
+    <div class="player-card">
+        <div class="info">
             <div class="name">
                 <slot name="name">
                 </slot>
@@ -12,50 +12,51 @@
                 <slot name="gender">
                 </slot>
             </div>
-            <div class="remove">
-                <slot>
-                </slot>
-            </div>
-        </p>
-
+        </div>
+        <div class="remove">
+            <slot>
+            </slot>
+        </div>
     </div>
 </template>
 
-
 <style scoped>
-.item {
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+.player-card {
+    margin-top: 1rem;
+    width: 250px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
     display: flex;
-    position: relative;
-    background-color: blue;
-    padding: 4px;
-    border-radius: 7px;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 300px;
 }
 
-.name {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-    min-width: 100px;
-    display: inline-block;
-    color: var(--color-heading);
+.info {
+    display: flex; /* Make the info section flex container */
+    justify-content: space-between; /* Space between name and gender */
+    flex: 1;
 }
 
-.gender {
+.name, .gender {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.4rem;
-    min-width: 60px;
-    display: inline-block;
-    color: var(--color-heading);
+    color: #2e282a;
 }
+
 .remove {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.4rem;
-    display: inline-block;
-    
-    color: var(--color-heading);
+    color: #2e282a;
+    padding: 0 0 0 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.remove:hover {
+    color: #FF0000;
 }
 </style>

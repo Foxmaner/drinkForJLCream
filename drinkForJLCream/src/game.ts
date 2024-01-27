@@ -1,30 +1,39 @@
-import { readFileSync } from 'fs'
+
+import rules from './rules.json' assert { type: "json" };
+
+class Player {
+
+    gender: string
+    nrDrinks: number
+    name: string
+
+    public constructor(Name:string, nrDrinks: number, Gender: string) {
+        this.gender = Gender
+        this.nrDrinks = nrDrinks
+        this.name = Name
+    }
+}
 
 class Game {
     
-    players: { [key: string]: {[key: string]: number} }
+    players: { [key: string]: Player }
     genders: { [key: string]: string[]}
     rules: string[]
 
     public constructor() {
         this.players = {}
         this.genders = {}
-        const file = readFileSync('./rules.json', 'utf-8')
-        this.rules = JSON.parse(file);
+        this.rules = rules["rules"]
     }
 
     addPlayer(Name: string, Gender: string): void{
-        let i: number = 0
-        if (Gender == "Male") {
-            i = 0
-        } else if (Gender == "Female") {
-            i = 1
+        let p = new Player(Name, 0, Gender)
+        this.players[Name] = p
+        if (!this.genders[Gender]){
+            this.genders[Gender] = [Name]
         } else {
-            i = 2
+            this.genders[Gender].push(Name)
         }
-        this.players[Name]["gender"] = i
-        this.players[Name]["nrDrinks"] = 0;
-        this.genders[Gender].push(Name)
     }
 
 
