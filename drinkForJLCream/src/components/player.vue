@@ -24,7 +24,8 @@
 
 <style scoped>
 .item {
-    margin-top: 2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     display: flex;
     position: relative;
     background-color: blue;
@@ -53,7 +54,8 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0.4rem;
-    float: right;
+    display: inline-block;
+    
     color: var(--color-heading);
 }
 </style>
