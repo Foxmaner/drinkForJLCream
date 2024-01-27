@@ -42,9 +42,15 @@ function removePlayer(p: string) {
     </select>
     
     <button @click=addPlayer()>Add player</button>
-    
+    <div v-if="Object.keys(players).length == 0">
+        <p>Add at least five players to start a game</p>
+    </div>
     <div v-for="(p, pp) in players">
-        <player>{{pp}}, {{p}} <button @click="removePlayer(String(pp))">Remove</button></player>
+        <player>
+            <template #name>{{pp}}, </template> 
+            <template #gender>{{p}}</template>
+            <button @click="removePlayer(String(pp))">Remove</button>
+        </player>
     </div>
     <div v-if="Object.keys(players).length >= 5">
         <button>Start game</button>
