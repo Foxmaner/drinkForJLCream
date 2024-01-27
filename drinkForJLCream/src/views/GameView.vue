@@ -7,4 +7,5 @@ import Gamecard from '../components/GameCard.vue'
 
 <template>
     <Gamecard title="Game 1" description="Björn dricker 8 klunkar" />
+
 </template>
