@@ -4,10 +4,14 @@
 
     import Game from "../game.ts"
 
-    let g: Game = new Game()
-
+    let g = new Game()
     const item = this.$router.params.item
+    
+    for (let i in item) {
+        g.addPlayer(i, item[i])
+    }
 
+    console.log(g.getPlayers())
 </script>
 
 
