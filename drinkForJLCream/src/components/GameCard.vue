@@ -11,13 +11,13 @@ export default {
         }
     }
 }
+
 </script>
 
 
 <template>
     <div class="game-card">
             <p class="card-text">{{ description }}</p>
-        
     </div>
 </template>
 
