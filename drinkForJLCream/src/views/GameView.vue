@@ -5,13 +5,20 @@
     import Game from "../game.ts"
 
     let g = new Game()
-    const item = this.$router.params.item
+    const params =  window.location.search
+        .slice(1)
+        .split('&')
+        .map(p => p.split('='))
+        .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
     
-    for (let i in item) {
-        g.addPlayer(i, item[i])
+    for (let i in params) {
+        g.addPlayer(i, params[i])
     }
 
-    console.log(g.getPlayers())
+    console.log("players: " + g.getPlayers())
+    console.log("males: " + g.getMales())
+    console.log("females: " + g.getFemales())
+    console.log("nonbinaries: " + g.getNonBinaries())
 </script>
 
 
