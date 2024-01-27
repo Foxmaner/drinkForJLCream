@@ -5,17 +5,13 @@
 
     let g = new Game()
 
-    console.log(window.location.search)
     const params = window.location.search
         .slice(1)
         .split("&")
         .map((p) => p.split("="))
         .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-    console.log(params)
 
     for (let i in params) {
-        console.log(i)
-        console.log(params[i])
         g.addPlayer(i, params[i])
     }
 
