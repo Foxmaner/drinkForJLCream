@@ -12,6 +12,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 html,
@@ -24,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .swiper {
