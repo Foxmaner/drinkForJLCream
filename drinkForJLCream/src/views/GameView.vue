@@ -50,15 +50,14 @@ export default {
       :modules="modules"
       class="mySwiper"
     >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
+      <swiper-slide>Björn dricker 8 klunkar</swiper-slide>
+      <swiper-slide>Mervan får dela ut 3 klunkar</swiper-slide>
+      <swiper-slide>Samtliga kör vattenfall</swiper-slide>
+      <swiper-slide>Eskil strippar</swiper-slide>
+      <swiper-slide>Axel sveper glaset</swiper-slide>
+      <swiper-slide>Björn ringer sitt ex</swiper-slide>
+      <swiper-slide>Mervan kör pitt eller pung</swiper-slide>
+      <swiper-slide>Eskil dricker 3 klunkar</swiper-slide>
     </swiper>
   </template>
 
