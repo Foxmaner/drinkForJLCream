@@ -8,7 +8,7 @@ import { ref } from 'vue'
 const Name = ref()
 const Gender = ref()
 
-let players: { [key: string]: string } = { "Gibbis": "Male", "Max": "Non binary", "Axel": "Male", "Eskil": "Female", "Björn": "Non binary" }
+let players: { [key: string]: string } = {}
 
 function addPlayer() {
 
@@ -54,7 +54,6 @@ function removePlayer(p: string) {
         </player>
     </div>
         <RouterLink :to="{path: '/game', query: players}"
-        v-if="Object.keys(players).length >= 5"
         class="button">Start Game</RouterLink>
 </template>
  

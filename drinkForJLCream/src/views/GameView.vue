@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Game from "../game.ts"
+    /*import Game from "../game.ts"
     let g = new Game()
     const params = window.location.search
         .slice(1)
@@ -15,7 +15,7 @@
     console.log("males: " + g.getMales())
     console.log("females: " + g.getFemales())
     console.log("nonbinaries: " + g.getNonBinaries())
-
+*/
         // Import Swiper Vue.js components
         import { Swiper, SwiperSlide } from 'swiper/vue';
 
