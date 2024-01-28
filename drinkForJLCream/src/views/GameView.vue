@@ -58,5 +58,6 @@ export default {
       <swiper-slide>Björn ringer sitt ex</swiper-slide>
       <swiper-slide>Mervan kör pitt eller pung</swiper-slide>
       <swiper-slide>Eskil dricker 3 klunkar</swiper-slide>
+      <swiper-slide>Max ska skriva en rad i projektet</swiper-slide>
     </swiper>
   </template>
