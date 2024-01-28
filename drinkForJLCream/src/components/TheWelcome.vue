@@ -44,7 +44,7 @@ function removePlayer(p: string) {
         <button @click=addPlayer() class="add-player">Add player</button>
     </div>
     <div v-if="Object.keys(players).length == 0">
-        <p>Add at least five players to start a game</p>
+        <p class="notice">Add at least five players to start a game</p>
     </div>
     <div v-for="(p, pp) in players">
         <player>
@@ -59,6 +59,11 @@ function removePlayer(p: string) {
  
 <style scoped>
 /* Styles for .input-bar container */
+
+.notice {
+    color: #FFF;
+    margin: 1rem 0px 1rem 0px;
+}
 .input-bar {
     display: flex;
     align-items: center;
