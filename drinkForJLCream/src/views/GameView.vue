@@ -1,11 +1,15 @@
-<script lang="ts">
+<script setup lang="ts">
     import Game from "../game.ts"
+ 
+    import cards from '../components/cards.vue'
+
     let g = new Game()
+
     const params = window.location.search
         .slice(1)
-        .split('&')
-        .map(p => p.split('='))
-        .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {})
+        .split("&")
+        .map((p) => p.split("="))
+        .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
 
     for (let i in params) {
         g.addPlayer(i, params[i])
@@ -16,30 +20,7 @@
     console.log("females: " + g.getFemales())
     console.log("nonbinaries: " + g.getNonBinaries())
 
-        // Import Swiper Vue.js components
-        import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/effect-cards';
-
-import './style.css';
-
-// import required modules
-import { EffectCards } from 'swiper/modules';
-
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        return {
-            modules: [EffectCards],
-        };
-    },
-};
 </script>
 
 
@@ -61,4 +42,13 @@ export default {
     </swiper>
   </template>
 
+    <cards></cards>
 
+</template>
+
+<style scoped>
+  #body {
+    background-color: #000000 !important;
+    margin-top: 100px;
+  }
+</style>
